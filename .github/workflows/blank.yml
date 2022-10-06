@@ -33,4 +33,5 @@ jobs:
       - name: commit messages
         env:
           COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
-        run: echo "$COMMIT_MESSAGES"
+          if: ${{contains(COMMIT_MESSAGES, 'bubfield')}}
+        run: echo "it worked!!!"
