@@ -18,5 +18,4 @@ jobs:
         WITH_V: true
         DEFAULT_BUMP: patch
         COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
-        if: ${{ contains('$COMMIT_MESSAGES', 'bubfield') == true }}
-        run: echo "he did it!!!"
+        run: echo "$COMMIT_MESSAGES"
