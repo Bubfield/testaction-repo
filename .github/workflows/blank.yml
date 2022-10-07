@@ -22,16 +22,8 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
-      - name: github context
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
-      - name: commits
-        env:
-          COMMITS: ${{ toJson(github.event.commits) }}
-        run: echo "$COMMITS"
       - name: commit messages
-        if: ${{contains('bubfield', 'bubfield')}}
+        if: ${{contains('zxcvmn', 'bubfield')}}
         env:
           COMMIT_MESSAGES: ${{ toJson(github.event.commits[0].message) }}
         run: echo "$COMMIT_MESSAGES"
