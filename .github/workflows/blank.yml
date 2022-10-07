@@ -23,7 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: commit messages
-        if: ${{contains(toJson(github.event.commits[0].message), 'bubfield')}}
+        if: ${{contains(toJson(github.event.commits[0].message), 'bubfielo')}}
         env:
           COMMIT_MESSAGES: ${{ toJson(github.event.commits[0].message) }}
         run: echo "$COMMIT_MESSAGES"
